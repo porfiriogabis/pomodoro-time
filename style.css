@@ -1,0 +1,80 @@
+:root {
+  --fundo: #12302b;
+  --tomate: #ff5436;
+  --folha: #8fd16a;
+  --texto: #f4efe6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  padding: 2rem 1rem;
+}
+
+main { width: 100%; max-width: 400px; text-align: center; }
+h1 { margin: 0 0 1.5rem; font-size: 2rem; }
+
+.modos { display: flex; gap: .5rem; justify-content: center; margin-bottom: 1.5rem; }
+.modo {
+  background: transparent;
+  color: var(--texto);
+  border: 2px solid #ffffff33;
+  padding: .5rem .9rem;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+}
+.modo.ativo { border-color: var(--folha); color: var(--folha); }
+
+/* O relógio é um círculo SVG que "esvazia" conforme o tempo passa */
+.relogio { position: relative; width: 260px; height: 260px; margin: 0 auto 1.5rem; }
+.relogio svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.relogio circle { fill: none; stroke-width: 12; }
+.trilho { stroke: #ffffff1a; }
+#progresso {
+  stroke: var(--tomate);
+  stroke-linecap: round;
+  stroke-dasharray: 565.5;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+#tempo {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-size: 3.4rem; font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
+#tarefa {
+  width: 100%;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #ffffff33;
+  background: #ffffff0d;
+  color: var(--texto);
+  font: inherit;
+  text-align: center;
+}
+#tarefa:focus-visible { outline: 3px solid var(--folha); }
+
+.controles { display: flex; gap: .75rem; justify-content: center; margin: 1.5rem 0; }
+.controles button {
+  font: inherit; font-weight: bold;
+  padding: .8rem 1.6rem;
+  border-radius: 10px;
+  border: 2px solid var(--texto);
+  background: transparent;
+  color: var(--texto);
+  cursor: pointer;
+}
+.controles .principal { background: var(--tomate); border-color: var(--tomate); color: #fff; }
+
+button:focus-visible { outline: 3px solid var(--folha); outline-offset: 2px; }
+.contador { opacity: .85; }
