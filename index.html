@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tomate Foco</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Tomate Foco</h1>
+
+    <div class="modos">
+      <button class="modo ativo" data-minutos="25">Foco</button>
+      <button class="modo" data-minutos="5">Pausa curta</button>
+      <button class="modo" data-minutos="15">Pausa longa</button>
+    </div>
+
+    <div class="relogio">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <circle class="trilho" cx="100" cy="100" r="90"/>
+        <circle id="progresso" cx="100" cy="100" r="90"/>
+      </svg>
+      <div id="tempo" role="timer">25:00</div>
+    </div>
+
+    <input id="tarefa" type="text" placeholder="No que você vai focar agora?" maxlength="60">
+
+    <div class="controles">
+      <button id="btn-iniciar" class="principal">Iniciar</button>
+      <button id="btn-zerar">Zerar</button>
+    </div>
+
+    <p class="contador">Tomates colhidos hoje: <strong id="contagem">0</strong></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
