@@ -65,6 +65,7 @@ function iniciarOuPausar() {
     if (restante <= 0) {
       parar();
       tocarAviso();
+      document.title = "Acabou o tempo! - Tomate Foco";
       if (modoAtual === "foco") somarTomate();
     }
   }, 1000);
