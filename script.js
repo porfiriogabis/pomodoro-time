@@ -24,7 +24,7 @@ function lerContagem() {
 function somarTomate() {
   localStorage.setItem(chaveDeHoje(), lerContagem() + 1);
   contagemEl.textContent = lerContagem();
-}
+} 
 
 // ---- Mostra o tempo na tela ----
 function atualizarTela() {
